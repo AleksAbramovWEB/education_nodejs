@@ -1,0 +1,13 @@
+<h2>Index page</h2>
+
+
+    <ul>{{todos}}
+        {{#each todos}}
+            <li>
+                <input {{#if completed}}checked{{/if}} type="checkbox" >
+                <span>{{#each this}}{{title}}{{/each}}</span>
+                <button class="btn btn-outline-dark">SAVE</button>
+            </li>
+        {{/each}}
+    </ul>
+
