@@ -1,0 +1,139 @@
+<a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank">developer.mozilla.org</a>
+
+<script type="text/javascript">
+
+    // получить тип данных
+    // console.log(typeof 1111)
+    // console.log(typeof 'wwww')
+    // console.log(typeof true)
+    //
+    // // преобразовать к инту
+    // const str = '11'
+    //
+    // console.log(Number.parseInt(str) + 22)
+    // console.log(parseInt(str) + 22)
+    // console.log(Number(str) + 22)
+    // console.log(+str + 22)
+
+    // console.log(0.22 + 0.11)
+    // console.log(+(0.4 + 0.2).toFixed(1))
+
+    // BigInt
+    // console.log(typeof 2357892357892358992358239024n)
+    // console.log(parseInt(10n) - 4)
+    // console.log(10n - BigInt(4))
+
+    //String
+    // const name = 'САША'
+    // const age = 30
+    //
+    // // const output = 'Привет меня зовут '+name+' и мой возраст '+age+' лет!'
+    // const output = `Привет меня зовут ${name} и мой возраст ${age} лет!`
+    //
+    // console.log(output.length)
+    // console.log(output.toUpperCase())
+    // console.log(output.toLowerCase())
+
+    //ФУНКЦИИ
+
+    // Function Expression
+    // const name2 = function (name) {
+    //     console.log(`Привет ${name}`)
+    // }
+    // name('SS')
+    // name2('sss')
+    //
+    // // Function Declaration
+    // function name(name) {
+    //     console.log(`Привет ${name}`)
+    // }
+    //
+    // // Анонимные функции
+    // let counter = 0
+    // const interval = setInterval(function (){
+    //
+    //     if (counter === 5)
+    //         clearInterval(interval) // остновить повторение
+    //     else
+    //         console.log(++counter)
+    // }, 500)
+
+    // стрелочные функции
+
+    // const arrow = (name) => {
+    //     console.log(`Привет ${name}`)
+    // }
+    //
+    // const arrow2 = name =>
+    //     console.log(`Привет ${name} `)
+    //
+    // const arrow3 = (name) => `Привет ${name} ` // не обязательно return
+    //
+    // console.log(arrow3('Sasha'));
+
+    // множество аргументов
+
+    // function sumAll(...all) {
+    //     // console.log(all) // принимается как массив
+    //     let result = 0;
+    //     for (let num of all) {
+    //         result += num
+    //     }
+    //     return result;
+    // }
+    //
+    // console.log(sumAll(1, 2, 3, 66, 33));
+    //
+    // //замыкания
+    //
+    // function createMember (name){
+    //     return function (lastName) {
+    //         console.log(name + lastName)
+    //     }
+    // }
+    //
+    // const withLastName = createMember('Sasha');
+    // withLastName('ddd')
+    // withLastName('wwwwww')
+
+    // const user = {
+    //     name: 'admin',
+    //     age: 30,
+    //     'complex key': 'комплексное значение',
+    //     ['key_'+22]: 'динамисчекий ключ',
+    //     greet(){
+    //         console.log('новый синтаксис метода')
+    //     },
+    //     getObj(){
+    //         console.log(this)
+    //     },
+    //     info(){
+    //         console.info("Имя:", this.name)
+    //     }
+    // }
+    //
+    // user.info()
+
+
+  //
+  //   user.greet()
+  //   console.log(user.name);
+  //   console.log(user['complex key']);
+  //   console.log(user['key_22']);
+  // //  delete user['key_22'] // удаление ключа
+  //   user.getObj()
+
+    // const {name, age: UserAge = 10} = user; //деструкторизация получаем переменные из свойств обьекта, новый синтаксис
+    // console.log(name, UserAge)
+    //
+    // for (let key in user) {
+    //     if (!user.hasOwnProperty(key)) continue; //что бы не бежал по свойствам родительского класса
+    //     console.log(`ключ: ${key}, занчение: ${user[key]}`)
+    // }
+    //
+    // const keys= Object.keys(user)
+    // console.log(keys) // возращает массив из названий свойств и методов массива
+    // keys.forEach( key => console.log(`ключ: ${key}, занчение: ${user[key]}`))
+
+
+</script>

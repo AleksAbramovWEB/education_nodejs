@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev": "nodemon index"
+    "dev": "nodemon index",
+    "brs": "browser-sync start --proxy \"http://localhost:3001/\" --files=\"**/*\""
   },
   "keywords": [],
   "author": "",
