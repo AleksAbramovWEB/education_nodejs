@@ -135,5 +135,43 @@
     // console.log(keys) // возращает массив из названий свойств и методов массива
     // keys.forEach( key => console.log(`ключ: ${key}, занчение: ${user[key]}`))
 
+    // Асинхронность
+
+    /**
+     *  обратный вызов разрешения, используемый для разрешения обещания со значением или результатом другого обещания,
+     * и обратный вызов отклонения, используемый для отклонения обещания с указанной причиной или ошибкой.
+     */
+
+    const delay = (wait = 1000) => {
+        const promise = new Promise( (resolve, reject) => {
+            // setTimeout(() => resolve(), wait)
+            setTimeout(() => reject('ошибка'), wait)
+        })
+        return promise
+    }
+
+    // delay().then(() => console.log('after to second'))
+    //        .catch(err => console.log(err))
+    //        .finally(() => console.log('finely'))
+
+    const getData = () => new Promise(resolve => resolve([1,1,2,3,5,8,13]))
+
+    // getData().then(data => console.log(data))
+
+    async function asyncExample(){
+        try {
+            await delay(3000)
+            const data = await getData()
+            console.log(data)
+        }catch (e){
+            console.log(e)
+        } finally {
+            console.log('finely')
+        }
+
+    }
+
+    asyncExample();
+
 
 </script>
