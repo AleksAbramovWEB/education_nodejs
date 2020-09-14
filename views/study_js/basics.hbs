@@ -1,8 +1,27 @@
 <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank">developer.mozilla.org</a>
 
+<h2 class="selector">Привет</h2>
+
 <script type="text/javascript">
 
-    // получить тип данных
+// const selector = document.querySelectorAll('.selector'); возращается коллекция
+const selector = document.querySelector('.selector'); // всегда один
+
+console.dir(selector);
+
+    // selector.onclick = () => {
+    //     if (selector.style.color === 'red') selector.style.color = 'green'
+    //     else selector.style.color = 'red'
+    // }
+
+    selector.addEventListener('click', (e)=>{ // регистрация события
+        console.log(e)
+            if (selector.style.color === 'red') selector.style.color = 'green'
+            else selector.style.color = 'red'
+    })
+
+
+// получить тип данных
     // console.log(typeof 1111)
     // console.log(typeof 'wwww')
     // console.log(typeof true)
@@ -142,36 +161,38 @@
      * и обратный вызов отклонения, используемый для отклонения обещания с указанной причиной или ошибкой.
      */
 
-    const delay = (wait = 1000) => {
-        const promise = new Promise( (resolve, reject) => {
-            // setTimeout(() => resolve(), wait)
-            setTimeout(() => reject('ошибка'), wait)
-        })
-        return promise
-    }
+    // const delay = (wait = 1000) => {
+    //     const promise = new Promise( (resolve, reject) => {
+    //         // setTimeout(() => resolve(), wait)
+    //         setTimeout(() => reject('ошибка'), wait)
+    //     })
+    //     return promise
+    // }
 
     // delay().then(() => console.log('after to second'))
     //        .catch(err => console.log(err))
     //        .finally(() => console.log('finely'))
 
-    const getData = () => new Promise(resolve => resolve([1,1,2,3,5,8,13]))
+    // const getData = () => new Promise(resolve => resolve([1,1,2,3,5,8,13]))
 
     // getData().then(data => console.log(data))
 
-    async function asyncExample(){
-        try {
-            await delay(3000)
-            const data = await getData()
-            console.log(data)
-        }catch (e){
-            console.log(e)
-        } finally {
-            console.log('finely')
-        }
+    // async function asyncExample(){
+    //     try {
+    //         await delay(3000)
+    //         const data = await getData()
+    //         console.log(data)
+    //     }catch (e){
+    //         console.log(e)
+    //     } finally {
+    //         console.log('finely')
+    //     }
+    // 
+    // }
 
-    }
+    // asyncExample();
 
-    asyncExample();
+    // setInterval(() => console.log('sss'), 222)
 
 
 </script>
