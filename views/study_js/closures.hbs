@@ -1,0 +1,47 @@
+
+<script>
+    function nddd(n) {
+        return function () {
+            console.log(100*n)
+        }
+    }
+
+    const calc = nddd(66)
+
+    calc()
+
+    function createInc(n) {
+        return function (num){
+            return n + num
+        }
+    }
+
+    const addOne = createInc(1)
+    const addTen = createInc(10)
+
+    console.log(addOne(10))
+    console.log(addTen(41))
+
+    // написать свою функцию bind
+
+    function logPerson(){
+        console.group(`Object:`)
+        console.log(`name:${this.name}`)
+        console.log(`age:${this.age}`)
+        console.log(`job:${this.job}`)
+        console.groupEnd()
+    }
+
+    const person1 = {name:'Alex',age:22, job:'sss'}
+    const person2 = {name:'Alex2222',age:232, job:'sdsdfss'}
+
+    function bind(obg, func) {
+        return function (...args) {
+            func.apply(obg, args)
+        }
+    }
+
+    bind(person1, logPerson)()
+
+
+</script>

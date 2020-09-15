@@ -3,6 +3,7 @@ const express = require('express') // для работы с сервером
 const mongoose = require('mongoose') // подключаем базы
 const exphbs = require('express-handlebars') //шаблонизатор
 const todoRoutes = require('./routes/todos')
+const studyRoutes = require('./routes/study')
 
 const PORT = process.env.PORT || 3000
 
@@ -20,6 +21,7 @@ app.set('views', 'views')
 app.use(express.urlencoded({extended: true}))
 
 app.use(todoRoutes)
+app.use(studyRoutes)
 
 async function start(){ // FRzbLo18L5XL1LxM
     try {

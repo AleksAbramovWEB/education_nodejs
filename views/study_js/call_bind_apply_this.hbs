@@ -1,0 +1,50 @@
+<script>
+    function hello() {
+        console.log('Hello', this)
+    }
+
+    const person = {
+        name: 'Aleks',
+        age: 30,
+        sayHello: hello,
+        sayHelloWindow: hello.bind(window), //bind(window) === bind(this)  в контексте какого обьекта выполняется ключевое слово this
+        logInfo(job, phone){
+            console.group(`${this.name} info:`)
+            console.log(`Name is ${this.name}`)
+            console.log(`Age is ${this.age}`)
+            console.log(`Job is ${job}`)
+            console.log(`Phone is ${phone}`)
+            console.groupEnd()
+        }
+    }
+
+    person.sayHello()
+    person.sayHelloWindow()
+
+    const anastasia = {
+        name: "Anastasia",
+        age: 29
+    }
+
+    // person.logInfo.bind(anastasia)() // bind метод обьекта функции
+
+    // const passParameterToBind = person.logInfo.bind(anastasia)
+    // passParameterToBind('love', '85375894856')
+
+    // person.logInfo.bind(anastasia, 'love', '85375894856')() //bind возращает функцию
+    // person.logInfo.call(anastasia, 'love', '85375894856') //call возращает функцию и вызывает ее сразу
+    person.logInfo.apply(anastasia, ['love', '85375894856']) //apply от call отличается только методом передачи параметров
+
+    const array = [1, 2, 3, 4, 5]
+    // Добавления метода для прототипа массива
+    Array.prototype.multBy = function (n) {
+        return  this.map(function (i) {
+            return i * n;
+        })
+    }
+
+    console.log(array.multBy(20))
+
+
+
+</script>

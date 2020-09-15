@@ -29,12 +29,6 @@ router.post('/create', async (req, res) => {
     res.redirect('/');
 });
 
-router.get('/basics_js', async (req, res) => {
-    res.render('study_js/basics', {
-        title: 'NODE JS | ОСНОВЫ ОJ',
-        isBasicsJs: true,
-    });
-})
 
 
 module.exports = router;
