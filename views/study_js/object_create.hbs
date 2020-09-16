@@ -1,0 +1,34 @@
+<script>
+    const person = Object.create(
+            {}, // создание прототипа
+            {
+                name: {
+                    value: 'Aleks',
+                    enumerable: true,
+                    writable: true, //можно изменять свойство
+                    configurable: true, // разрешение на удаление ключа
+                },
+                birthYear: {
+                    value: 1990,
+                    enumerable: false, // парамет скрытности для цикла
+                    writable: false,
+                },
+                age: {
+                    get() {
+                        return new Date().getFullYear() - this.birthYear
+                    },
+                    set(v) {
+                        console.log('Sat age', v) // запускается при переназачении переменной
+                    }
+                }
+            }
+    )
+
+   // delete  person.name удалить свойство
+
+    console.log(person.age = 30)
+
+    for (let key in person) {
+        console.log(person[key])
+    }
+</script>

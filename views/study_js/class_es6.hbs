@@ -1,0 +1,82 @@
+<script>
+    class Animal {
+
+        static type = 'Animal' //доступко тоько обращаясь к классу
+
+        constructor(option) {
+            this.name = option.name
+            this.age = option.age
+            this.hasTail = option.hasTail
+        }
+
+        voice(){
+            console.log('rrrrrrr')
+        }
+    }
+
+    // console.log(Animal.type)
+
+    // const animal = new Animal({
+    //     name: 'Lisa',
+    //     age: 30,
+    //     hasTail: true
+    // })
+    //
+    // animal.voice()
+
+    class Cat extends Animal{
+        constructor(options) {
+            super(options); // запускаем конструктор родительского класса
+            this.color = options.color
+        }
+
+        voice() {
+            super.voice(); // вызвать метод родительско класса
+            console.log('Cat')
+        }
+
+        get ageInfo(){ // отдать свойство
+            return this.age * 7
+        }
+
+        set ageInfo(newAge){ // изменить свойств
+            this.age = newAge
+        }
+    }
+
+    const animal = new Cat({
+        name: 'Cat',
+        age: 30,
+        hasTail: true,
+        color: 'green',
+    })
+
+    // animal.ageInfo = 2
+    // console.log(animal.ageInfo)
+
+    class Component {
+
+        #private = 'приватное свойство'
+
+        constructor(selector) {
+            this.$el = document.querySelector(selector)
+        }
+
+        hide() {
+            this.$el.style.display = 'none'
+        }
+
+        show() {
+            this.$el.style.display = 'block'
+        }
+
+        get pre(){
+            // noinspection JSAnnotator
+            return this.#private
+        }
+    }
+
+    console.log((new Component()).pre);
+
+
+</script>

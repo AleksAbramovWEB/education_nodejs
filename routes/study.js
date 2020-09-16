@@ -34,4 +34,28 @@ router.get('/promise', async (req, res) => {
     });
 })
 
+router.get('/object_create', async (req, res) => {
+    res.render('study_js/object_create', {
+        title: 'JavaScript Объекты с Object.create. Что такое getters, setters',
+    });
+})
+
+router.get('/class_es6', async (req, res) => {
+    res.render('study_js/class_es6', {
+        title: 'JavaScript Все о ES6 Классах',
+    });
+})
+
+router.get('/async_await', async (req, res) => {
+    res.render('study_js/async_await', {
+        title: 'JavaScript Async, Await. Работа с сервером c fetch',
+    });
+})
+
+router.get('/proxy', async (req, res) => {
+    res.render('study_js/proxy', {
+        title: 'JavaScript Async, Await. Работа с сервером c fetch',
+    });
+})
+
 module.exports = router;

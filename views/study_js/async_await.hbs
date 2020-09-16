@@ -1,0 +1,35 @@
+<script>
+    const delay = ms => new Promise(r => setTimeout(() =>r(), ms))
+
+    // delay(2000).then(data => console.log( `прошло ${data}ms`))
+
+    const url = 'https://jsonplaceholder.typicode.com/todos/1'
+
+    // function fetchTodos(){
+    //     console.log('fetchTodos start')
+    //     return delay(2000)
+    //             .then(() => fetch(url))
+    //             .then(response => response.json())
+    // }
+    //
+    // fetchTodos().then(data => {
+    //     console.dir(data)
+    // }).catch(e => console.error(e))
+
+    async function fetchAsyncTodos() {
+        try{
+            await delay(2000)
+            const response = await fetch(url)
+            const data = await  response.json()
+            console.log(data)
+        }catch (e) {
+            console.error(e)
+        }finally {
+            console.log('finely')
+        }
+
+    }
+
+    fetchAsyncTodos()
+
+</script>
