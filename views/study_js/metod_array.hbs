@@ -1,0 +1,47 @@
+<script>
+    const people = [
+        { id: 11, name: 'Vladilen', job: 'Fullstack', age: 25 },
+        { id: 22, name: 'Elena', job: 'Student', age: 22 },
+        { id: 33, name: 'Victor', job: 'Backend', age: 23 },
+        { id: 44, name: 'Vasilisa', job: 'Teacher', age: 24 }
+    ]
+
+    // for (let i = 0; i < people.length; i++) {
+    //     console.log(people[i])
+    // }
+
+    // for (let person of people) {
+    //     console.log(person)
+    // } ES6
+
+    //ForEach
+    // people.forEach(function (person, index, array){
+    //     console.log(person, index, array)
+    // })
+    // people.forEach(person => console.log(person))
+
+    //Map для обаботки данных и занесения результата в новый массив
+    // const newPeople = people.map(person => person)
+    // console.log(newPeople)
+
+    //Filter
+    // const adults = people.filter(person => {
+    //     if (person.age > 23) return true
+    // })
+    // const adults = people.filter(person => person.age > 23 )
+    // console.log(adults)
+    //
+    // const amount = people.reduce((total, person) => {
+    //     return total + person.age
+    // }, 0)//2 параметр от чего начинаем считать и прилетает в тотал на первой итерации
+    //
+    // console.log(amount);
+
+    //Find
+    const Elena =  people.find(person => person.name === 'Elena')
+    console.log(Elena)
+    //FindIndex
+    const Elena2 =  people.findIndex(person => person.name === 'Elena')
+    console.log(Elena2)
+
+</script>

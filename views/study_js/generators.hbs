@@ -1,0 +1,30 @@
+<script>
+    function* strGenerator() {
+        yield 'H'
+        yield 'e'
+        yield 'l'
+        yield 'l'
+        yield 'o'
+    }
+
+    const str = strGenerator()
+    // console.log(str.next())
+    // console.log(str.next())// возращает следующую в виде обьекта
+    // console.log(str.next())
+    // console.log(str.next())
+    // console.log(str.next().value)
+    // console.log(str.next())
+
+    // function* numberGen(n = 10) {
+    //     for (let i = 0; i < n.length; i++) {
+    //         yield i
+    //     }
+    // }
+
+    for (let k of 'Hello') console.log(k)
+    for (let k of [1,2,4,8,16,32]) console.log(k)
+    for (let k of str) console.log(k)
+
+
+
+</script>

@@ -54,7 +54,19 @@ router.get('/async_await', async (req, res) => {
 
 router.get('/proxy', async (req, res) => {
     res.render('study_js/proxy', {
-        title: 'JavaScript Async, Await. Работа с сервером c fetch',
+        title: 'JavaScript Proxy',
+    });
+})
+
+router.get('/generators', async (req, res) => {
+    res.render('study_js/generators', {
+        title: 'Генераторы. Symbol iterator, for of',
+    });
+})
+
+router.get('/metod_array', async (req, res) => {
+    res.render('study_js/metod_array', {
+        title: 'Методы массивов (forEach, map, filter, reduce, find, findIndex). Js Массивы.',
     });
 })
 
