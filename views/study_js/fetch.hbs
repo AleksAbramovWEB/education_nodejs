@@ -1,0 +1,46 @@
+<script>
+    const url = "https://jsonplaceholder.typicode.com/users";
+
+
+
+    // function sendRequest(method, url, body = null){
+    //     return new Promise((resolve, reject) => {
+    //         const xhr = new XMLHttpRequest()
+    //
+    //         xhr.open(method, url)
+    //         xhr.responseType = 'json'
+    //         xhr.setRequestHeader('Content-Type', 'application/json')
+    //         xhr.onload = () => {
+    //             if (xhr.status >= 400){
+    //                 reject(xhr.response)
+    //             }
+    //             resolve(xhr.response)
+    //         }
+    //         xhr.onerror = () => {
+    //             console.log(xhr.response)
+    //         }
+    //
+    //         xhr.send(JSON.stringify(body))
+    //     })
+    // }
+
+    // sendRequest('GET', url).then(data => console.log(data)).catch(err => console.log(err))
+    // sendRequest('POST', url, {name:'dddd'}).then(data => console.log(data)).catch(err => console.log(err))
+
+    function sendRequest(method, url, body = null){
+        const headers = {
+            'Content-Type': 'application/json'
+        }
+        return fetch(url, {
+            method: method,
+            body: JSON.stringify(body),
+            headers: headers
+        }).then(response =>{
+            return  response.json()
+        })
+    }
+
+    sendRequest('GET', url).then(data => console.log(data)).catch(err => console.log(err))
+    sendRequest('POST', url, {name:'dddd'}).then(data => console.log(data)).catch(err => console.log(err))
+
+</script>

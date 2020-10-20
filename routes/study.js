@@ -70,4 +70,10 @@ router.get('/metod_array', async (req, res) => {
     });
 })
 
+router.get('/Fetch', async (req, res) => {
+    res.render('study_js/fetch', {
+        title: 'апросы на сервер. Fetch, XMLHttpRequest (XHR), Ajax.',
+    });
+})
+
 module.exports = router;
